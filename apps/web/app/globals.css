@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@import "@repo/tailwindconfig";
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
