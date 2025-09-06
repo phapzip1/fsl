@@ -4,10 +4,21 @@
   "private": true,
   "description": "Database provider",
   "exports": {
-    "." : "./tailwind.config.ts"
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "db:generate": "dotenv -e .env.local prisma generate",
+    "db:migrate": "dotenv -e .env.local prisma migrate --skip-generate",
+    "db:deploy": "dotenv -e .env.local prisma migrate deploy",
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
   "devDependencies": {
     "@repo/typescript-config": "*",
-    "tailwindcss": "^4.1.12"
+    "prisma": "^6.15.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.15.0"
   }
 }
