@@ -1,0 +1,24 @@
+{
+  "name": "@repo/db",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Database provider",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "db:generate": "dotenv -e .env.local prisma generate",
+    "db:migrate": "dotenv -e .env.local prisma migrate --skip-generate",
+    "db:deploy": "dotenv -e .env.local prisma migrate deploy",
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "*",
+    "prisma": "^6.15.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.15.0"
+  }
+}
